@@ -72,7 +72,16 @@ public class WaiterActivity extends AppCompatActivity
         rgProtein.setEnabled(false);
         btSendOrder.setEnabled(false);
 
-        name = edName.getText().toString();
+        name = edName.getText().toString().trim();
+        if (name.isEmpty())
+        {
+            Toast.makeText(this, "Input name client", Toast.LENGTH_SHORT).show();
+            edName.setEnabled(true);
+            rgBase.setEnabled(true);
+            rgProtein.setEnabled(true);
+            btSendOrder.setEnabled(true);
+            return;
+        }
         switch (rgBase.getCheckedRadioButtonId())
         {
             case R.id.rbnRice:
@@ -84,6 +93,13 @@ public class WaiterActivity extends AppCompatActivity
             case R.id.rbnMix:
                 base = "mix";
                 break;
+            default:
+                Toast.makeText(this, "Select a base", Toast.LENGTH_SHORT).show();
+                edName.setEnabled(true);
+                rgBase.setEnabled(true);
+                rgProtein.setEnabled(true);
+                btSendOrder.setEnabled(true);
+                return;
         }
 
         switch (rgProtein.getCheckedRadioButtonId())
@@ -100,6 +116,13 @@ public class WaiterActivity extends AppCompatActivity
             case R.id.rbnSoy:
                 protein = "soy";
                 break;
+            default:
+                Toast.makeText(this, "Select a protein", Toast.LENGTH_SHORT).show();
+                edName.setEnabled(true);
+                rgBase.setEnabled(true);
+                rgProtein.setEnabled(true);
+                btSendOrder.setEnabled(true);
+                return;
         }
 
         Base _base = new Base();
