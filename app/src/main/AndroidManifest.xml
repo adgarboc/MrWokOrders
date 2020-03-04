@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SplashTheme">
-        <activity android:name=".WaiterActivity"></activity>
+        <activity android:name=".WaiterActivity" />
         <activity android:name=".ChefActivity" />
         <activity android:name=".DirectorActivity" />
         <activity android:name=".RegisterActivity" />

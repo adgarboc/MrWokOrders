@@ -6,14 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".WaiterActivity">
 
+
+    <EditText
+        android:id="@+id/etxName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Base"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etxName" />
+
+    <RadioGroup
+        android:id="@+id/rgpBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/rbnRice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rice" />
+
+        <RadioButton
+            android:id="@+id/rbnPasta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pasta" />
+
+        <RadioButton
+            android:id="@+id/rbnMix"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Mix" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Protein"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgpBase" />
+
+    <RadioGroup
+        android:id="@+id/rgpProtein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/rbnChicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chicken" />
+
+        <RadioButton
+            android:id="@+id/rbnBeef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beef" />
+
+        <RadioButton
+            android:id="@+id/rbnShrimp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Shrimp" />
+
+        <RadioButton
+            android:id="@+id/rbnSoy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soy" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnSendOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="SendOrderOnClick"
+        android:text="Send Order"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgpProtein" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:onClick="logout"
+        android:text="LogOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="logout"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
